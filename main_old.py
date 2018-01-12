@@ -18,7 +18,7 @@ def CSVManagerTest():
 def FileTransferManagerTest():
     sourceFile = os.getcwd() + '\\GeneratedFiles\\File_1_MB.txt'
     destinationPath = os.getcwd() + '\\TransferedFiles\\File_1_MB.txt'
-    print ()
+    print()
     start = time.time()
     #FileTransferManager.copyFile(sourceFile, destinationPath)
     #FileTransferManager.copyLargeFile(sourceFile, destinationPath)
@@ -36,15 +36,15 @@ def MeasureFileTransferOperation(sourceFilePath, destinationPath):
 
 def MeasureFileTransferOpertaionTest():
     sourceFile = os.getcwd() + '\\GeneratedFiles\\File_1_MB.txt'
-    destinationPath = os.getcwd() + '\\TransferedFiles\\'
+    destinationPath = 'E:\\'
     time = MeasureFileTransferOperation(sourceFile, destinationPath)
     print(time)
 
 def main():
-    #FileGenerator.Generate(1)
+    FileGenerator.Generate(100)
     #CSVManagerTest()
     #FileTransferManagerTest()
-    MeasureFileTransferOpertaionTest()
+    # MeasureFileTransferOpertaionTest()
 
 if __name__ == "__main__":
     main()

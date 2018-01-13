@@ -39,12 +39,18 @@ def MeasureFileTransferOpertaionTest():
     time = MeasureFileTransferOperation(sourceFile, destinationPath)
     print(time)
 
+def GenerateTestFileCollection():
+    #parametr: litera dysku, ilość plików, wielkość danych w MB
+    #zwraca ścieżke do lokalizacji, gdzie pliki zostały stworzone
+    createdFilesDirectory = FileGenerator.GenerateTestFiles('D', 3, 3)
+
 def main():
     #FileGenerator.Generate(100)
     #FileGenerator.GenerateWithText(1.5)
     #CSVManagerTest()
-    FileTransferManagerTest()
+    #FileTransferManagerTest()
     # MeasureFileTransferOpertaionTest()
+    GenerateTestFileCollection()
 
 if __name__ == "__main__":
     main()

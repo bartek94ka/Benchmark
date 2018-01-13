@@ -1,6 +1,7 @@
 from FileGenerator import FileGenerator
 from CSVManager import CSVManager
 from FileTransferManager import FileTransferManager
+from FileCleaner import FileCleaner
 import os
 import time
 
@@ -42,7 +43,12 @@ def MeasureFileTransferOpertaionTest():
 def GenerateTestFileCollection():
     #parametr: litera dysku, ilość plików, wielkość danych w MB
     #zwraca ścieżke do lokalizacji, gdzie pliki zostały stworzone
-    createdFilesDirectory = FileGenerator.GenerateTestFiles('D', 3, 3)
+    createdFilesDirectory = FileGenerator.GenerateTestFiles('D', 1, 1)
+    copiedFilesDirectory = FileTransferManager.copyFilesFromSpecificDirectory(createdFilesDirectory, 'D')
+    FileCleaner.RemoveDirectoryWithFiles(createdFilesDirectory)
+    FileCleaner.RemoveFilesFromDirectory(copiedFilesDirectory)
+    #FileCleaner.RemoveFilesFromDirectory(copiedFilesDirectory)
+    FileCleaner.RemoveDirectory(copiedFilesDirectory)
 
 def main():
     #FileGenerator.Generate(100)

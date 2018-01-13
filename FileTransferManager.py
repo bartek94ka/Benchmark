@@ -1,6 +1,7 @@
 from shutil import *
 import shutil
 import os
+from DiscSpaceInfoProvider import DiscSpaceInfoProvider
 
 class FileTransferManager:
     def copyFile(src, dest):
@@ -23,3 +24,20 @@ class FileTransferManager:
         with open(src, 'rb') as fsrc:
             with open(dest, 'wb') as fdest:
                 shutil.copyfileobj(fsrc, fdest, buffer_size)
+
+    def copyFilesFromSpecificDirectory(sourceDirectory, destionationDisc):
+        fileList = os.listdir(sourceDirectory)
+        statinfo = os.stat(sourceDirectory + '\\File1_.txt')
+        fileSize = statinfo.st_size
+        fileListSize = len(fileList)
+        totalFilesSize = fileListSize * fileSize
+        freeSpace = DiscSpaceInfoProvider.getFreeSpace(destionationDisc)
+        if(freeSpace < totalFilesSize):
+            print("There is not enough memory on destination disc to copy files. Disc name: " + destionationDisc)
+            return
+        destionationDirectory = destionationDisc + ":\\DestinationDirectory"
+        for file in fileList:
+            srcFilePath = sourceDirectory + "\\" + file
+            destFilePath = destionationDirectory + "\\" + file
+            FileTransferManager.copyFile(srcFilePath, destFilePath)
+        return destionationDirectory

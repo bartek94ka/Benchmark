@@ -35,7 +35,7 @@ class SampleApp(tk.Tk):
         l3 = tk.Label(self, text="Ammount of files:", width=14)
         e1 = tk.Entry(self, textvariable=self.e1_var)
 
-        l4 = tk.Label(self, text="Test file size:", width=14)
+        l4 = tk.Label(self, text="Test file size [MB]:", width=14)
         e2 = tk.Entry(self, textvariable=self.e2_var)
 
         self.om = tk.OptionMenu(self, self.om_variable, (), command=self.on_drive_click)

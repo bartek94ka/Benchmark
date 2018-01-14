@@ -98,8 +98,8 @@ class SampleApp(tk.Tk):
             self.copying_speed.append(speed)
             self.copying_time.append(round(tmp_total, 2))
             self.l2_var.set("Speed: " + str(speed) + "MB/s.")
-            print("Speed: " + str(speed) + "MB/s.")
-        print(self.copying_speed)
+            # print("Speed: " + str(speed) + "MB/s.")
+        # print(self.copying_speed)
 
     def run_test(self):
         self.l2_var.set("Generating files. Please wait.")
@@ -125,7 +125,7 @@ class SampleApp(tk.Tk):
 
         self.l2_var.set("AVG speed: " + str(round((free_space_before - free_space_after) / 1024 / 1024 / (end - start), 2)) + "MB/s")
         self.copying_avg = round((free_space_before - free_space_after) / 1024 / 1024 / (end - start), 2)
-        print("AVG speed: " + str(round((free_space_before - free_space_after) / 1024 / 1024 / (end - start), 2)) + "MB/s")
+        # print("AVG speed: " + str(round((free_space_before - free_space_after) / 1024 / 1024 / (end - start), 2)) + "MB/s")
         self.b1.configure(state=tk.NORMAL)
         self.b2.configure(state=tk.NORMAL)
         self.b3.configure(state=tk.NORMAL)

@@ -19,11 +19,7 @@ def get_drives_list(drive_types=(win32con.DRIVE_REMOVABLE,)):
 def get_drive_info(drive):
     ret = ""
     try:
-        s = GetDiskFreeSpace(drive)
         ret += GetVolumeInformation(drive)[0]
-        ret += " | "
-        ret += str(int(s[0]*s[1]*s[2]/(1024*1024)))
-        ret += "MB free"
     except:
         ret = ""
 

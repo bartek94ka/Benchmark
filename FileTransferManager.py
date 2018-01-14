@@ -35,7 +35,7 @@ class FileTransferManager:
         if(freeSpace < totalFilesSize):
             print("There is not enough memory on destination disc to copy files. Disc name: " + destionationDisc)
             return
-        destionationDirectory = destionationDisc + ":\\DestinationDirectory"
+        destionationDirectory = destionationDisc + "\\DestinationDirectory"
         for file in fileList:
             srcFilePath = sourceDirectory + "\\" + file
             destFilePath = destionationDirectory + "\\" + file

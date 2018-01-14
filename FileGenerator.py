@@ -25,7 +25,7 @@ class FileGenerator:
         f.close()
 
     def GenerateTestFiles(disc, quantity, size):
-        directory = disc + ":\\GeneratedFiles_Quantity_" + str(quantity) + "_Size_" + str(size) + "_MB"
+        directory = disc + "\\GeneratedFiles_Quantity_" + str(quantity) + "_Size_" + str(size) + "_MB"
         if not os.path.exists(directory):
             os.makedirs(directory)
         fileName = "File1_"

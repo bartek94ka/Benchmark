@@ -8,5 +8,5 @@ class DiscSpaceInfoProvider():
         return freeSpace
 
     def getFreeSpace(disc):
-        freeSpace = shutil.disk_usage(disc + ":\\").free
+        freeSpace = shutil.disk_usage(disc + "\\").free
         return freeSpace
